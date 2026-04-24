@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tokentrack"
+version = "0.1.0"
+description = "Terminal-native LLM token counter and usage tracker"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Pavan Kumar Dhruv", email = "pavankumardhruv@gmail.com" },
+]
+keywords = ["llm", "tokens", "cost", "tracking", "openai", "anthropic", "cli"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development",
+]
+dependencies = [
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+openai = ["tiktoken>=0.7.0"]
+all = ["tiktoken>=0.7.0"]
+dev = ["pytest>=7.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[project.scripts]
+tokentrack = "tokentrack.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/Pavankumardhruv/tokentrack"
+Repository = "https://github.com/Pavankumardhruv/tokentrack"
+Issues = "https://github.com/Pavankumardhruv/tokentrack/issues"
