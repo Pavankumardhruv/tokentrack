@@ -6,21 +6,7 @@
 
 **Know exactly what your AI costs.**
 
-tokentrack is a terminal-native tool that counts LLM tokens and tracks your API spend across OpenAI, Anthropic, and Google — all from the command line. No dashboards to log into, no spreadsheets to maintain.
-
----
-
-## The Problem
-
-You're building with LLMs and have no idea what you're spending. API bills surprise you at the end of the month. You switch between GPT-4o, Claude, and Gemini but can't compare costs. There's no single place to see:
-
-- How many tokens you've used today
-- Which model is eating your budget
-- Whether you're on track to blow past your monthly limit
-
-tokentrack fixes that — right in your terminal, where you already work.
-
----
+Terminal-native token counter and spend tracker for OpenAI, Anthropic, and Google. Count tokens, log API calls, set budgets, and see where your money goes - all from the command line.
 
 ## Install
 
@@ -34,8 +20,6 @@ pip install tokentrack[openai]
 ```
 
 Requires Python 3.10+.
-
----
 
 ## Quick Start
 
@@ -56,11 +40,9 @@ tokentrack dash
 tokentrack prices
 ```
 
----
-
 ## Commands
 
-### `tokentrack count` — Count tokens
+### `tokentrack count` - Count tokens
 
 ```bash
 # Count tokens in text
@@ -84,7 +66,7 @@ Output:
 Estimated input cost: $0.0046
 ```
 
-### `tokentrack log` — Log usage
+### `tokentrack log` - Log usage
 
 ```bash
 # Basic logging
@@ -100,7 +82,7 @@ tokentrack log -p openai -m gpt-4o -i 2000 -o 600 --note "summarize docs"
 tokentrack log -p google -m gemini-pro -i 5000 -o 2000 --session "batch-1"
 ```
 
-Cost is calculated automatically from built-in pricing. Model names are flexible — you can use short aliases:
+Cost is calculated automatically from built-in pricing. Model names are flexible - you can use short aliases:
 
 | You type | Resolves to |
 |---|---|
@@ -113,20 +95,20 @@ Cost is calculated automatically from built-in pricing. Model names are flexible
 | `o3`, `o3-mini`, `o4-mini` | openai/o3, o3-mini, o4-mini |
 | `4.1`, `4.1-mini`, `4.1-nano` | openai/gpt-4.1 family |
 
-### `tokentrack dash` — Terminal dashboard
+### `tokentrack dash` - Terminal dashboard
 
 ```bash
 tokentrack dash
 ```
 
 Shows:
-- **Spend summary** — today, this week, this month, all time
-- **Daily sparkline** — 30-day spend visualized with Unicode bars
-- **Top models** — ranked by cost with percentage breakdown
-- **Provider breakdown** — OpenAI vs Anthropic vs Google
-- **Budget status** — color-coded progress bars
+- **Spend summary** - today, this week, this month, all time
+- **Daily sparkline** - 30-day spend visualized with Unicode bars
+- **Top models** - ranked by cost with percentage breakdown
+- **Provider breakdown** - OpenAI vs Anthropic vs Google
+- **Budget status** - color-coded progress bars
 
-### `tokentrack report` — Usage reports
+### `tokentrack report` - Usage reports
 
 ```bash
 # Daily report (last 30 days)
@@ -139,7 +121,7 @@ tokentrack report --period weekly
 tokentrack report --period monthly --last 12
 ```
 
-### `tokentrack budget` — Spending alerts
+### `tokentrack budget` - Spending alerts
 
 ```bash
 # Set budgets
@@ -156,7 +138,7 @@ When you `tokentrack log` an entry, it automatically checks your budgets and war
 - **Yellow warning** at 80% of budget
 - **Red alert** when exceeded
 
-### `tokentrack prices` — Pricing table
+### `tokentrack prices` - Pricing table
 
 ```bash
 # All providers
@@ -168,7 +150,7 @@ tokentrack prices --provider anthropic
 
 Shows input, output, and cached token prices per 1M tokens for every supported model.
 
-### `tokentrack export` — Export data
+### `tokentrack export` - Export data
 
 ```bash
 # Export to CSV
@@ -180,8 +162,6 @@ tokentrack export --format json --output usage.json
 # Export a date range
 tokentrack export --format csv --start 2026-04-01 --end 2026-04-30
 ```
-
----
 
 ## Supported Models
 
@@ -213,8 +193,6 @@ tokentrack export --format csv --start 2026-04-01 --end 2026-04-30
 
 *Prices are per 1M tokens in USD.*
 
----
-
 ## Storage
 
 All data is stored locally in a SQLite database:
@@ -234,8 +212,6 @@ The database is human-readable with any SQLite client:
 ```bash
 sqlite3 ~/.tokentrack/tokentrack.db "SELECT * FROM usage ORDER BY timestamp DESC LIMIT 10"
 ```
-
----
 
 ## Use as a Library
 
@@ -280,9 +256,7 @@ tokentrack budget           →  Stores limits, checks on every log
 tokentrack export           →  Dumps to CSV or JSON
 ```
 
-Everything is local. No API keys needed (unless you want accurate OpenAI token counts via tiktoken). No cloud. No accounts.
-
----
+Everything is local. No API keys needed (unless you want accurate OpenAI token counts via tiktoken).
 
 ## License
 
