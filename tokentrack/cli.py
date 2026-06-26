@@ -1,4 +1,4 @@
-"""CLI entry point — tokentrack commands."""
+"""CLI entry point - tokentrack commands."""
 
 from __future__ import annotations
 
@@ -130,7 +130,7 @@ def log(
     if cost is not None:
         parts.append(f"  Cost:      {_format_cost(cost)}")
     else:
-        parts.append("  Cost:      [yellow]unknown model — price not calculated[/yellow]")
+        parts.append("  Cost:      [yellow]unknown model - price not calculated[/yellow]")
     if note:
         parts.append(f"  Note:      {note}")
 
@@ -140,12 +140,12 @@ def log(
     for budget, spent, exceeded in budget_results:
         if exceeded:
             console.print(
-                f"[bold red]⚠ Budget exceeded:[/bold red] {budget.period} — "
+                f"[bold red]⚠ Budget exceeded:[/bold red] {budget.period} - "
                 f"{_format_cost(spent)} / {_format_cost(budget.amount)}"
             )
         elif spent >= budget.amount * 0.8:
             console.print(
-                f"[yellow]⚠ Budget warning:[/yellow] {budget.period} — "
+                f"[yellow]⚠ Budget warning:[/yellow] {budget.period} - "
                 f"{_format_cost(spent)} / {_format_cost(budget.amount)} (80%+)"
             )
 
@@ -264,7 +264,7 @@ def prices(
             t.model,
             f"${t.input_price:.2f}",
             f"${t.output_price:.2f}",
-            f"${t.cached_price:.3f}" if t.cached_price else "—",
+            f"${t.cached_price:.3f}" if t.cached_price else "-",
         )
 
     console.print(table)

@@ -1,4 +1,4 @@
-"""Token counting — tiktoken for OpenAI, estimator fallback for others."""
+"""Token counting - tiktoken for OpenAI, estimator fallback for others."""
 
 from __future__ import annotations
 

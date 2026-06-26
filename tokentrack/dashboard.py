@@ -1,4 +1,4 @@
-"""Rich terminal dashboard — summary, sparklines, tables."""
+"""Rich terminal dashboard - summary, sparklines, tables."""
 
 from __future__ import annotations
 

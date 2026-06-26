@@ -1,4 +1,4 @@
-"""SQLite database — schema, connection, and all data access."""
+"""SQLite database - schema, connection, and all data access."""
 
 from __future__ import annotations
 

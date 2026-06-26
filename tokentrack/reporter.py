@@ -1,4 +1,4 @@
-"""Report generation — daily, weekly, monthly aggregation."""
+"""Report generation - daily, weekly, monthly aggregation."""
 
 from __future__ import annotations
 
